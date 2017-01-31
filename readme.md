@@ -1,4 +1,4 @@
-<p align="center" style="font-size: 24;"><strong>ECO</strong></p>
+<p align="center" style="font-size: 72;"><strong>ECO</strong></p>
 
 ## About
 
