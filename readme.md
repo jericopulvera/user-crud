@@ -1,4 +1,4 @@
-<p align="center"><img src="https://jericopulvera.com/assets/git/eco-logo.jpg"></p>
+<p align="center"><img src="https://jericopulvera.com/assets/git/img/eco-logo.jpg"></p>
 
 ## About
 
