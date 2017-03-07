@@ -11,7 +11,5 @@
 |
 */
 Route::group(['middleware' => 'web'], function () {
-	Route::resource('user', 'UsersController');
+    Route::resource('user', 'UsersController');
 });
-
-

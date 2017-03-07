@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
@@ -15,6 +15,7 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::paginate(5);
+
         return view('user.index', compact('users'));
     }
 
@@ -31,14 +32,15 @@ class UsersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         User::create([
-            'name' => request('name'),
-            'address' => request('address'),
+            'name'     => request('name'),
+            'address'  => request('address'),
             'birthday' => request('birthday'),
         ]);
 
@@ -48,52 +50,58 @@ class UsersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $user = User::find($id);
+
         return view('user.edit', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, User $user)
     {
         $user->update([
-            'name' => request('name'),
-            'address' => request('address'),
+            'name'     => request('name'),
+            'address'  => request('address'),
             'birthday' => request('birthday'),
         ]);
+
         return redirect()->route('user.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         User::destroy($id);
+
         return redirect()->route('user.index');
     }
 }
